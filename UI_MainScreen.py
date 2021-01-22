@@ -33,17 +33,19 @@ class UI_MainScreen():
 
     def place_widgets(self):
         UI_setter = UI_Setter(self.UI_window)
-        Button(self.UI_window, text="Disparity Map", width=self.btn_params[0], height=self.btn_params[1], bd=self.btn_params[2],
+        Button(self.UI_window, text="Disparity Map", width=self.btn_params[0], height=self.btn_params[1], bd=self.btn_params[2], state = "active",
         command = lambda: UI_setter.open_disp_map()).grid(row=self.disparity_map_btn_pos[0], column=self.disparity_map_btn_pos[1])
-        Button(self.UI_window, text="Stereo Video Render", width=self.btn_params[0], height=self.btn_params[1], bd=self.btn_params[2], state = "disabled",
-        command = lambda: UI_setter.open_video_render()).grid(row=self.video_render_btn_pos[0], column=self.video_render_btn_pos[1])
+        # Button(self.UI_window, text="Stereo Video Render (Coming Soon)", width=self.btn_params[0], height=self.btn_params[1], bd=self.btn_params[2], state = "disabled",
+        # command = lambda: UI_setter.open_video_render()).grid(row=self.video_render_btn_pos[0], column=self.video_render_btn_pos[1])
+        Button(self.UI_window, text="Image rectification", width=self.btn_params[0], height=self.btn_params[1], bd=self.btn_params[2], state = "active",
+        command = lambda: UI_setter.open_rectification()).grid(row=self.video_render_btn_pos[0], column=self.video_render_btn_pos[1])
         Button(self.UI_window, text="Point Cloud (Coming Soon)", width=self.btn_params[0], height=self.btn_params[1], bd=self.btn_params[2], state = "disabled",
         command = lambda: UI_setter.open_point_cloud()).grid(row=self.point_cloud_btn_pos[0], column=self.point_cloud_btn_pos[1])
         Button(self.UI_window, text="Reconstruction (Coming Soon)", width=self.btn_params[0], height=self.btn_params[1], bd=self.btn_params[2], state = "disabled",
         command = lambda: UI_setter.open_reconstruction()).grid(row=self.reconstruction_btn_pos[0], column=self.reconstruction_btn_pos[1])
         # Button(self.UI_window, text="Visualiser (Coming Soon)", width=self.btn_params[0], height=self.btn_params[1], bd=self.btn_params[2], state = "disabled",
         # command = lambda: UI_setter.open_visualiser()).grid(row=self.visualiser_btn_pos[0], column=self.visualiser_btn_pos[1])
-        Button(self.UI_window, text="Test Area", width=self.btn_params[0], height=self.btn_params[1], bd=self.btn_params[2],
+        Button(self.UI_window, text="Test Area", width=self.btn_params[0], height=self.btn_params[1], bd=self.btn_params[2], state = "disabled",
         command = lambda: UI_setter.open_test_area()).grid(row=self.test_area_btn_pos[0], column=self.test_area_btn_pos[1])
 
         Button(self.UI_window, text="Exit", width=self.btn_params[0], height=self.btn_params[1], bd=self.btn_params[2],

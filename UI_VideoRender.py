@@ -23,29 +23,7 @@ class UI_VideoRender():
         self.place_widgets()
         self.create_margins()
 
-    def create_progress_bar(self):
-        render_progress = ttk.Progressbar(self.UI_window, orient=HORIZONTAL, length = 1000, mode='determinate')
-        return render_progress
-
     def place_widgets(self):
-        self.progress_bar = self.create_progress_bar()
-        self.progress_bar.grid(row=self.progress_bar_pos[0], column=self.progress_bar_pos[1])
-        self.run_calculations()
-
-    def set_progress_value(self, curr, max):
-        progress_perc = int (curr/max * 100)
-        self.progress_bar['value'] = progress_perc
-        # self.UI_window.update_idletasks()
-        time.sleep(0.1)
-
-    def estimate_calc_time(self):
-        some_timer_value = 100
-        return some_timer_value
-
-    def run_calculations(self):
-        timer = self.estimate_calc_time()
-        for x in range(timer):
-            self.set_progress_value(x, timer)
         return None
 
     def create_margins(self):

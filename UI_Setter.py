@@ -1,11 +1,13 @@
 from tkinter import *
 
 from UI_DisparityMap import UI_DisparityMap
+from UI_Rectification import UI_Rectification
 from UI_PointCloud import UI_PointCloud
 from UI_Visualizer import UI_Visualizer
 from UI_Rconstruction import UI_Reconstruction
 from UI_VideoRender import UI_VideoRender
 from UI_TestArea import UI_TestArea
+
 
 class UI_Setter():
     UI_window = Widget
@@ -21,6 +23,11 @@ class UI_Setter():
         self.reset_UI()
         test_area = UI_TestArea(self.UI_window)
         test_area.open_main()
+
+    def open_rectification(self):
+        self.reset_UI()
+        rectification = UI_Rectification(self.UI_window)
+        rectification.open_main()
 
     def open_disp_map(self):
         self.reset_UI()
